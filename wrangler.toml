@@ -1,0 +1,19 @@
+name = "reply-platform-api"
+main = "src/index.ts"
+compatibility_date = "2023-12-18"
+compatibility_flags = ["nodejs_compat"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "reply-platform-db"
+database_id = "335926d1-a7ff-4061-bbb1-aa69879aaea8"
+
+[vars]
+# ⚠️ IMPORTANT: Replace with your actual Google OAuth Client ID
+GOOGLE_CLIENT_ID = "764998904028-961vabephjihi48j199ss8fiqtcudng1.apps.googleusercontent.com"
+# ⚠️ IMPORTANT: Update to your production frontend URL for deployment
+FRONTEND_URL = "https://reply-platform-dashboard.pages.dev"
+
+# ⚠️ SECURITY: Never put secrets in this file!
+# For local development: Create .dev.vars file with secrets (see .dev.vars.example)
+# For production: Use wrangler secret put GOOGLE_CLIENT_SECRET and JWT_SECRET
