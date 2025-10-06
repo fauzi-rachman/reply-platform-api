@@ -1,0 +1,49 @@
+{
+  "name": "reply-platform-api",
+  "version": "1.0.0",
+  "description": "Reply Platform API - Cloudflare Workers with Hono framework",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "deploy:remote": "wrangler deploy --env production",
+    "type-check": "tsc --noEmit",
+    "lint": "echo 'No linting configured'",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "db:create": "wrangler d1 create reply-platform-db",
+    "db:migrate": "wrangler d1 execute reply-platform-db --remote --file=schema.sql",
+    "db:migrate:local": "wrangler d1 execute reply-platform-db --local --file=schema.sql",
+    "secrets:list": "wrangler secret list",
+    "secrets:put": "echo 'Run: wrangler secret put SECRET_NAME'",
+    "tail": "wrangler tail"
+  },
+  "dependencies": {
+    "hono": "^3.12.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20231218.0",
+    "wrangler": "^4.0.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.0",
+    "@vitest/ui": "^1.1.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fauzi-rachman/reply-platform-api.git"
+  },
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "hono",
+    "api",
+    "d1",
+    "oauth",
+    "typescript"
+  ],
+  "author": "Fauzi Rachman",
+  "license": "MIT"
+}
