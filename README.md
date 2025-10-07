@@ -2,6 +2,10 @@
 
 A serverless API built with **Hono** framework and deployed to **Cloudflare Workers** with **D1 database** integration.
 
+> 📚 **Comprehensive Documentation Available**: This project includes detailed documentation in the [`docs/`](docs/) directory covering architecture, development, deployment, troubleshooting, and complete API reference with examples.
+> 
+> 🚀 **Quick Start**: New to the project? Check out the [Quick Reference Guide](QUICK_REFERENCE.md) for a 30-second overview!
+
 ## 🚀 **Live API**
 
 **Production API**: `https://reply-platform-api.red-frog-895a.workers.dev`
@@ -124,9 +128,20 @@ CLOUDFLARE_ACCOUNT_ID=your_cloudflare_account_id
 
 ## 📖 **Documentation**
 
-- **API Endpoints**: See inline JSDoc comments in source code
-- **Authentication Flow**: Google OAuth → JWT token → API calls
-- **Database Schema**: See `schema.sql`
+Comprehensive documentation is available in the `docs/` directory:
+
+- **[API Reference](docs/API.md)** - Complete API endpoint documentation with examples
+- **[Architecture Guide](docs/ARCHITECTURE.md)** - System architecture and design patterns
+- **[Development Guide](docs/DEVELOPMENT.md)** - Local setup and development workflow
+- **[Deployment Guide](docs/DEPLOYMENT.md)** - Production deployment instructions
+- **[Troubleshooting](docs/TROUBLESHOOTING.md)** - Common issues and solutions
+- **[Code Examples](docs/EXAMPLES.md)** - Integration examples and use cases
+
+### Quick Links
+
+- **Database Schema**: See [`schema.sql`](schema.sql)
+- **Contributing**: See [`CONTRIBUTING.md`](CONTRIBUTING.md)
+- **Code of Conduct**: See [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md)
 
 ## 🤝 **Contributing**
 
