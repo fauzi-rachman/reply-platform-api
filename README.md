@@ -3,6 +3,8 @@
 A serverless API built with **Hono** framework and deployed to **Cloudflare Workers** with **D1 database** integration.
 
 > 📚 **Comprehensive Documentation Available**: This project includes detailed documentation in the [`docs/`](docs/) directory covering architecture, development, deployment, troubleshooting, and complete API reference with examples.
+> 
+> 🚀 **Quick Start**: New to the project? Check out the [Quick Reference Guide](QUICK_REFERENCE.md) for a 30-second overview!
 
 ## 🚀 **Live API**
 
