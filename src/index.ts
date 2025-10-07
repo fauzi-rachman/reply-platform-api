@@ -16,8 +16,6 @@
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 import { Env } from './types';
-import authRoutes from './auth';
-import websiteRoutes from './websites';
 
 // Initialize Hono app with typed environment
 const app = new Hono<Env>();
@@ -49,26 +47,24 @@ app.get('/', (c) => {
 });
 
 /**
- * Mount authentication routes
- * All routes under /auth/* handle OAuth login and user information
- * 
- * Routes:
+ * TODO: Authentication routes
+ * Routes to be implemented under /auth/*:
  * - POST /auth/google - Exchange OAuth code for JWT token
  * - GET /auth/me - Get current user information (requires authentication)
+ * 
+ * Implementation should be added in src/auth.ts
  */
-app.route('/auth', authRoutes);
 
 /**
- * Mount website management routes
- * All routes under /websites/* handle website CRUD operations
- * 
- * Routes (all require authentication):
+ * TODO: Website management routes
+ * Routes to be implemented under /websites/*:
  * - GET /websites - List user's websites
  * - POST /websites - Add new website
  * - GET /websites/:id - Get specific website
  * - DELETE /websites/:id - Delete website
+ * 
+ * Implementation should be added in src/websites.ts
  */
-app.route('/websites', websiteRoutes);
 
 // Export the app as the default Worker handler
 export default app;
