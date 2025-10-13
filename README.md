@@ -14,8 +14,11 @@ A serverless API built with **Hono** framework and deployed to **Cloudflare Work
 
 - ⚡ **Serverless** - Runs on Cloudflare Workers
 - 🗄️ **D1 Database** - Built-in SQLite database  
-- 🔐 **Google OAuth** - Secure authentication
+- 🔐 **Multiple Auth Methods** - Google OAuth, Email/Password, OTP (passwordless)
 - 🔑 **JWT Tokens** - Stateless authentication
+- 🏢 **Organizations** - Multi-tenant workspace support
+- 🤖 **AI Agents** - Agent management and tracking
+- 📊 **Usage Tracking** - Credits and metrics monitoring
 - 📱 **RESTful API** - Clean REST endpoints
 - 🛡️ **CORS Enabled** - Cross-origin support
 - 📊 **TypeScript** - Full type safety
@@ -24,6 +27,9 @@ A serverless API built with **Hono** framework and deployed to **Cloudflare Work
 
 ### Authentication
 - `POST /auth/google` - Exchange Google OAuth code for JWT token
+- `POST /auth/login` - Email/password authentication
+- `POST /auth/otp/request` - Request OTP for passwordless login
+- `POST /auth/otp/verify` - Verify OTP and authenticate
 - `GET /auth/me` - Get current user information
 
 ### Website Management  
@@ -31,6 +37,28 @@ A serverless API built with **Hono** framework and deployed to **Cloudflare Work
 - `POST /websites` - Add a new website
 - `GET /websites/:id` - Get specific website
 - `DELETE /websites/:id` - Delete a website
+
+### Organizations
+- `GET /organizations` - List all organizations
+- `POST /organizations` - Create a new organization
+- `GET /organizations/:id` - Get organization details
+- `PUT /organizations/:id` - Update organization
+- `DELETE /organizations/:id` - Delete organization
+- `GET /organizations/:id/members` - List organization members
+
+### AI Agents
+- `GET /agents` - List all agents
+- `POST /agents` - Create a new agent
+- `GET /agents/:id` - Get agent details
+- `PUT /agents/:id` - Update agent
+- `DELETE /agents/:id` - Delete agent
+
+### Usage Tracking
+- `GET /usage/:organization_id` - Get usage statistics
+- `GET /usage/:organization_id/history` - Get usage history
+- `GET /usage/:organization_id/by-agent` - Get usage by agent
+
+📖 **Full API documentation**: See [docs/API_ENDPOINTS.md](docs/API_ENDPOINTS.md)
 
 ## 🛠️ **Quick Setup**
 
