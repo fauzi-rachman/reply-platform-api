@@ -31,6 +31,20 @@ Welcome to the Reply Platform API documentation! This directory contains compreh
   - Error codes and handling
   - Code examples in multiple languages
 
+- **[API Endpoints](API_ENDPOINTS.md)** - Detailed endpoint specifications
+  - All authentication methods (Google OAuth, Email/Password, OTP)
+  - Organizations and workspaces
+  - AI Agents management
+  - Usage tracking and metrics
+  - Complete request/response schemas
+
+- **[Dashboard Integration](DASHBOARD_INTEGRATION.md)** - Frontend integration guide
+  - Setup instructions
+  - Authentication flows
+  - Organizations and agents integration
+  - Usage tracking implementation
+  - Testing and deployment
+
 ### Deployment
 
 - **[Deployment Guide](DEPLOYMENT.md)** - Production deployment instructions

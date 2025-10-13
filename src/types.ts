@@ -105,3 +105,98 @@ export interface GoogleTokenResponse {
   /** Refresh token for obtaining new access tokens (optional, depends on OAuth flow) */
   refresh_token?: string;
 }
+
+/**
+ * Organization/Workspace model
+ * Represents a workspace that can have multiple members and agents
+ */
+export interface Organization {
+  /** Unique organization identifier (UUID v4) */
+  id: string;
+  /** Organization name */
+  name: string;
+  /** URL-friendly slug for organization */
+  url_slug: string;
+  /** ID of the user who owns this organization */
+  owner_id: string;
+  /** Creation timestamp (ISO 8601 format) */
+  created_at: string;
+  /** Last update timestamp (ISO 8601 format) */
+  updated_at: string;
+}
+
+/**
+ * Organization member model
+ * Represents a user's membership in an organization
+ */
+export interface OrganizationMember {
+  /** Unique membership identifier (UUID v4) */
+  id: string;
+  /** Organization ID */
+  organization_id: string;
+  /** User ID */
+  user_id: string;
+  /** Member role (owner, admin, member) */
+  role: string;
+  /** Membership creation timestamp (ISO 8601 format) */
+  created_at: string;
+}
+
+/**
+ * AI Agent model
+ * Represents an AI agent configuration for an organization
+ */
+export interface Agent {
+  /** Unique agent identifier (UUID v4) */
+  id: string;
+  /** Organization ID that owns this agent */
+  organization_id: string;
+  /** Agent name */
+  name: string;
+  /** Agent description (optional) */
+  description: string | null;
+  /** Last training timestamp (ISO 8601 format, optional) */
+  last_trained: string | null;
+  /** Creation timestamp (ISO 8601 format) */
+  created_at: string;
+  /** Last update timestamp (ISO 8601 format) */
+  updated_at: string;
+}
+
+/**
+ * OTP code model
+ * Represents a one-time password for email-based authentication
+ */
+export interface OTPCode {
+  /** Unique OTP identifier (UUID v4) */
+  id: string;
+  /** Email address for OTP */
+  email: string;
+  /** 6-digit OTP code */
+  code: string;
+  /** Expiration timestamp (ISO 8601 format) */
+  expires_at: string;
+  /** Whether OTP has been used */
+  used: boolean;
+  /** Creation timestamp (ISO 8601 format) */
+  created_at: string;
+}
+
+/**
+ * Usage record model
+ * Tracks credit usage for organizations and agents
+ */
+export interface UsageRecord {
+  /** Unique usage record identifier (UUID v4) */
+  id: string;
+  /** Organization ID */
+  organization_id: string;
+  /** Agent ID (optional) */
+  agent_id: string | null;
+  /** Number of credits used */
+  credits_used: number;
+  /** Date of usage record (ISO 8601 date format) */
+  record_date: string;
+  /** Creation timestamp (ISO 8601 format) */
+  created_at: string;
+}

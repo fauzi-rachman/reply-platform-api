@@ -16,6 +16,11 @@
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 import { Env } from './types';
+import authRoutes from './auth';
+import websiteRoutes from './websites';
+import organizationRoutes from './organizations';
+import agentRoutes from './agents';
+import usageRoutes from './usage';
 
 // Initialize Hono app with typed environment
 const app = new Hono<Env>();
@@ -47,24 +52,34 @@ app.get('/', (c) => {
 });
 
 /**
- * TODO: Authentication routes
- * Routes to be implemented under /auth/*:
- * - POST /auth/google - Exchange OAuth code for JWT token
- * - GET /auth/me - Get current user information (requires authentication)
- * 
- * Implementation should be added in src/auth.ts
+ * Authentication routes
+ * Mounted under /auth/*
  */
+app.route('/auth', authRoutes);
 
 /**
- * TODO: Website management routes
- * Routes to be implemented under /websites/*:
- * - GET /websites - List user's websites
- * - POST /websites - Add new website
- * - GET /websites/:id - Get specific website
- * - DELETE /websites/:id - Delete website
- * 
- * Implementation should be added in src/websites.ts
+ * Website management routes
+ * Mounted under /websites/*
  */
+app.route('/websites', websiteRoutes);
+
+/**
+ * Organization management routes
+ * Mounted under /organizations/*
+ */
+app.route('/organizations', organizationRoutes);
+
+/**
+ * AI Agent management routes
+ * Mounted under /agents/*
+ */
+app.route('/agents', agentRoutes);
+
+/**
+ * Usage tracking routes
+ * Mounted under /usage/*
+ */
+app.route('/usage', usageRoutes);
 
 // Export the app as the default Worker handler
 export default app;
